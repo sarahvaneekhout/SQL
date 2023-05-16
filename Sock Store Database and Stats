@@ -1,0 +1,26 @@
+--Create a store database
+
+CREATE TABLE socks (ID INTEGER, name TEXT,color TEXT,size TEXT, price INTEGER);
+
+INSERT INTO socks VALUES (1,"high","black","S",5);
+INSERT INTO socks VALUES (2,"low","grey","S",6);
+INSERT INTO socks VALUES (3,"no show","pink","s",10);
+INSERT INTO socks VALUES (4,"long","blue","M",20);
+INSERT INTO socks VALUES (5,"thick","red","L",25);
+INSERT INTO socks VALUES (6,"thin","yellow","M",22);
+INSERT INTO socks VALUES (7,"strips","orange","L",12);
+INSERT INTO socks VALUES (8,"slip on","black","L",11);
+INSERT INTO socks VALUES (9,"short","tan","s",14);
+INSERT INTO socks VALUES (10,"long2","green","m",13);
+INSERT INTO socks VALUES (11,"short2","purple","s",15);
+INSERT INTO socks VALUES (12,"low2","red","s",12);
+INSERT INTO socks VALUES (13,"high2","blue","m",16);
+INSERT INTO socks VALUES (14,"thick2","red","s",17);
+INSERT INTO socks VALUES (15,"strips2","orange","s",18);
+
+--display the database ordered by price.
+SELECT * FROM socks;
+ORDER BY price desc;
+
+--What is the max price of socks in store?
+SELECT MAX(price) FROM socks;
