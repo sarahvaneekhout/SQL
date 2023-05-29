@@ -1,0 +1,45 @@
+--Create a store database
+
+CREATE TABLE clothing (ID INTEGER PRIMARY KEY, name TEXT,cost integer,color integer,quanity integer);
+
+INSERT INTO clothing VALUES (1, "leggings" , 20, "black", 15);
+INSERT INTO clothing VALUES (2, "Jeans" , 15, "blue", 20);
+INSERT INTO clothing VALUES (3, "shorts", 9, "white", 12);
+INSERT INTO clothing VALUES (4, "tanktops", 12, "red", 8);
+INSERT INTO clothing VALUES (5, "blouse", 8, "pink", 15);
+INSERT INTO clothing VALUES (6, "halter top", 9, "yellow", 13);
+INSERT INTO clothing VALUES (7, "PJ shorts", 6, "navy", 5);
+INSERT INTO clothing VALUES (8, "PJ top", 6, "purple", 7);
+INSERT INTO clothing VALUES (9, "slippers", 11, "black", 9);
+INSERT INTO clothing VALUES (10, "vans", 25, "white", 12);
+INSERT INTO clothing VALUES (11, "sandles", 16, "tan", 13);
+INSERT INTO clothing VALUES (12, "crocs", 4, "green", 15);
+INSERT INTO clothing VALUES (13, "short dress", 15, "purple", 15);
+INSERT INTO clothing VALUES (14, "long dress", 21, "pink", 20);
+INSERT INTO clothing VALUES (15, "bralette", 10, "white", 8);
+
+--Display the database ordered by items that cost the most.
+SELECT * FROM clothing;
+ORDER BY cost DESC;
+
+--What is the max price of clothing in store?
+SELECT MAX(cost) FROM clothing;
+
+--Which clothing items cost less than 10 dollars?
+SELECT name, cost 
+FROM clothing 
+WHERE cost < 10;
+
+--Which clothing items cost more than 10 dollars?
+SELECT name, cost 
+FROM clothing 
+WHERE cost > 10;
+
+--Which item cost less than 10 dollars and the color purple?
+SELECT name, cost 
+FROM clothing 
+WHERE cost < 10 
+AND color = 'purple';
+
+
+
