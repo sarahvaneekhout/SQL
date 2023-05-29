@@ -66,34 +66,28 @@ INSERT INTO superbowls(Date,SB,Winner,Winner_Pts,Loser,Loser_Pts,MVP,Stadium,Cit
 INSERT INTO superbowls(Date,SB,Winner,Winner_Pts,Loser,Loser_Pts,MVP,Stadium,City,State) VALUES ('Jan 12 1969','III (3)','New York Jets',16,'Baltimore Colts',7,'Joe Namath+','Orange Bowl','Miami','Florida');
 INSERT INTO superbowls(Date,SB,Winner,Winner_Pts,Loser,Loser_Pts,MVP,Stadium,City,State) VALUES ('Jan 14 1968','II (2)','Green Bay Packers',33,'Oakland Raiders',14,'Bart Starr+','Orange Bowl','Miami','Florida');
 
-What is the avg,max and min values of winner points?
+--What is the avg,max and min values of winner points?
 SELECT * FROM superbowls;
 SELECT AVG(winner_Pts)FROM superbowls;
 SELECT MAX(winner_pts)FROM superbowls;
 SELECT MIN(winner_Pts)FROM superbowls;
 
-What MVP player has the most amount of winner points?
+--What MVP player has the most amount of winner points?
 SELECT MVP,MAX(winner_Pts) as winner_Pts from superbowls GROUP BY MVP HAVING winner_Pts>54;
 
-How many MVP players have beginner,advanced and elite abilities?
+--How many MVP players have beginner,advanced and elite abilities?
 SELECT COUNT (*),
-
-  CASE 
-
-  WHEN winner_Pts > 50 THEN "Elite"
-
-  WHEN winner_Pts > 30 THEN "Advanced"
-
-  WHEN winner_Pts > 10 THEN "Beginner"
-
+CASE 
+WHEN winner_Pts > 50 THEN "Elite"
+WHEN winner_Pts > 30 THEN "Advanced"
+WHEN winner_Pts > 10 THEN "Beginner"
 END as "ability" FROM superbowls
-
 GROUP BY "ability";
 
-MVP player that has the most amount of winner points OR played before the year 2000?
+--MVP player that has the most amount of winner points OR played before the year 2000?
 SELECT MVP,MAX(winner_Pts) FROM superbowls WHERE (winner_Pts=52 OR date<2000);
 
-What MVP player has less than 30 winner points and superbowl number 50?
+--What MVP player has less than 30 winner points and superbowl number 50?
 SELECT * FROM superbowls WHERE winner_pts <30 AND SB=50;
 
 
