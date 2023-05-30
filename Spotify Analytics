@@ -43,3 +43,37 @@ SELECT track_name, artist_name, popularity
 FROM BIT_DB.spotifydata
 ORDER BY popularity desc
 LIMIT 10
+
+#I also determined which artists might be good contenders for longer sets by uncovering which artists had the largest number of tracks on this chart.
+SELECT
+artist_name,
+count(artist_name) as track_count
+FROM BIT_DB.spotifydata
+Group BY artist_name
+Order BY track_count desc
+LIMIT 10
+
+#In order to determine who might be a good contender for a headliner I found the ten artists had the most popularity on average.
+SELECT
+artist_name
+,avg(popularity)
+FROM BIT_DB.spotifydata
+GROUP BY artist_name
+ORDER BY avg(popularity) desc
+LIMIT 10
+
+#Calculate the average popularity for the artists in the Spotify data table. Then, for every artist with an average popularity of 90 or above, show their name, their average popularity, and label them as a “Top Star”
+WITH popularity_average_CTE AS (
+SELECT 
+s.artist_name, 
+AVG(s.popularity) AS average_popularity
+FROM Spotifydata s
+GROUP BY s.artist_name
+)
+
+SELECT 
+artist_name,
+average_popularity,
+'Top Star' AS tag
+FROM popularity_average_CTE
+WHERE average_popularity>= 90
