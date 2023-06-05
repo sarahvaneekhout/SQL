@@ -1,4 +1,4 @@
-#working with a dataset called chinook.
+#Working with a dataset called chinook.
 #Represents a digital media store and includes tables for artists, albums, media tracks, invoices, and customers.
 
 #1. Show Customers who are not in the US?
