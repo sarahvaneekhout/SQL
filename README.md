@@ -1,2 +1,3 @@
 # Sarah's SQL Portfolio
-Welcome to my SQL Portfolio! This code repository contains examples of SQL I've written. Feel free to take a look and reach out if you have any questions
+This code repository contains examples of SQL I've written such as Joins, group by clause, creating tables and much more. Feel free to take a look and reach out if you have any questions: vaneekhoutsarah@gmail.com
+
